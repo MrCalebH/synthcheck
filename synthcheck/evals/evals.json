@@ -1,0 +1,31 @@
+{
+  "about": "Lightweight directional evals for the SynthCheck method. Each scenario has a KNOWN correct ranking; a faithful run should reproduce the ordering (absolute numbers will vary — that's expected, output is directional). Use these to verify the method ranks correctly and doesn't collapse to uniform scores.",
+  "pass_criteria": "Correct RANK order on the checked dimension + visibly different distributions across cells (no variance collapse) + at least one real objection surfaced.",
+  "scenarios": [
+    {
+      "id": "pricing-anchor-sanity",
+      "decision_type": "pricing",
+      "stimulus": "A simple habit-tracking mobile app, solo-built, no standout feature vs free alternatives.",
+      "cohorts": ["budget-conscious", "premium-quality-seeker", "skeptic"],
+      "price_cells": ["$2/mo", "$9/mo", "$29/mo", "$99/mo"],
+      "expected_ranking": "$99/mo should rank lowest on purchase intent; intent should fall monotonically as price rises for the budget cohort; the premium cohort may flatten or invert at the low end (price-as-quality-signal).",
+      "checks": ["monotonic decline for budget cohort", "premium cohort inversion appears", "no cell has ~identical distribution to another"]
+    },
+    {
+      "id": "copy-specific-beats-vague",
+      "decision_type": "copy",
+      "stimulus": "Headline A: 'The best way to manage your finances.' vs Headline B: 'See every subscription you forgot you're paying for — in 30 seconds.'",
+      "cohorts": ["in-market", "skeptic"],
+      "expected_ranking": "Headline B (specific, concrete benefit) should beat Headline A (vague) on comprehension, scroll-stop, and CTA-click intent across both cohorts.",
+      "checks": ["B > A on at least 2 of 3 metrics", "skeptic cohort surfaces a believability objection on B"]
+    },
+    {
+      "id": "offer-redteam-surfaces-catch",
+      "decision_type": "offer",
+      "stimulus": "Free personalized assessment — results unlock a call with our team.",
+      "cohorts": ["motivated", "skeptic-redteam", "price-sensitive"],
+      "expected_ranking": "The skeptic/red-team cohort must surface the 'this is a sales funnel / high-ticket upsell trap' objection; motivated cohort should show higher top-2-box than the red-team.",
+      "checks": ["red-team objection names the upsell/sales-call risk", "motivated top2box > red-team top2box", "a validate-next real-money test is proposed"]
+    }
+  ]
+}

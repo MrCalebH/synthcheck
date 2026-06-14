@@ -1,0 +1,55 @@
+# Synth Swarm config — copy this, fill it in, pass the parsed object as `args` to the workflow.
+# Stage 0 (Outcome Contract) lives here. No contract, no run.
+
+decision:
+  type: pricing            # pricing | offer | price-change | landing-page | copy | name | positioning | feature
+  question: "Will the market pay $297/mo for <product>, and what's the revenue-max price?"
+  threshold: "Ship $297 if top-2-box purchase intent >= 40% AND Van Westendorp optimal >= $279"
+  prior_expectation: "I think $197 wins on volume but $297 maximizes revenue via a premium cohort"   # feeds the Surprise Detector
+  variants: []             # for copy/name/positioning/offer: the 2-4 things being compared (between-subjects)
+
+# The thing twins react to. Real copy beats a summary — paste the actual offer/page/ad.
+stimulus: |
+  <one dense paragraph (or the actual landing copy / ad / offer): what it is, the experience,
+  the wow moment, the trial/offer shape>
+
+# 3-6 commercially meaningful segments. Include >=1 skeptic-heavy and >=1 premium cohort
+# (premium cohorts often INVERT price findings via price-as-quality-signal -> tiering signal).
+cohorts:
+  - name: budget-conscious
+    share: 0.35                      # population weight (used for post-stratification)
+    traits: "price-first, churns on novelty, compares everything, ~20% financially stressed"
+    anchors: ["competitor A $49/mo", "free alternative", "DIY"]   # real prices they already pay
+    grounding: "reviews+reddit"      # which sources seed this cohort (free-text hint)
+  - name: premium-quality-seeker
+    share: 0.2
+    traits: "values outcome over price, distrusts cheap, time-poor"
+    anchors: ["premium competitor $499/mo", "agency $5k retainer"]
+  - name: skeptic-redteam            # the adversarial cohort — its job is to REFUTE
+    share: 0.15
+    traits: "burned before, assumes hype, hunts for the catch"
+    anchors: ["tried 3 tools that failed"]
+
+# For pricing / price-change: the price points to test (between-subjects, ~10 twins/cell).
+price_cells: ["$97", "$197", "$297", "$497"]
+
+# Which elicitation metrics to run (see anchors.md + the packs in SKILL.md).
+metrics: ["purchase_intent", "price_fairness", "van_westendorp", "gabor_granger"]
+
+# Population size.
+n_per_cohort: 40
+batch_size: 8
+
+# Stage 1 grounding sources. Omit to run ungrounded (lower fidelity). Each becomes a harvester agent.
+sources:
+  - { type: reviews,     target: "G2/Capterra/Amazon listing URL or product name" }
+  - { type: reddit,      query: "<subreddit or search terms for the pain point>" }
+  - { type: competitors, target: "<competitor sites to scrape positioning/pricing>" }
+  - { type: own-data,    target: "<CRM export / past survey / sales-call notes path>" }
+  # - { type: graph,     target: "<knowledge-graph path/query for real-entity backstories>" }
+
+# Stage 4 calibration. Any real numbers to anchor the prior to. Omit if none (output = uncalibrated prior).
+calibration_data: null
+#   real_conversion_at: { "$197": 0.06 }
+#   real_ad_ctr: 0.018
+#   churn_baseline: 0.05
