@@ -4,7 +4,7 @@
 
 **Simulate a thousand of your customers and ask them anything — your price, your offer, your name, your landing page — before you spend a dollar finding out the hard way.**
 
-[![Website](https://img.shields.io/badge/website-synthcheck-ff5c38?style=flat-square)](https://synthcheck.dev)
+[![Website](https://img.shields.io/badge/website-synthcheck-ff5c38?style=flat-square)](https://trysynthcheck.vercel.app)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](./LICENSE)
 [![Works with any LLM](https://img.shields.io/badge/works%20with-Claude%20·%20GPT%20·%20Gemini%20·%20any%20LLM-9d7bff?style=flat-square)](#two-ways-in)
 
@@ -86,17 +86,17 @@ synthcheck/
   anchors.md          the SSR scoring libraries (the accuracy backbone)
   synthcheck.workflow.js  power mode — fan a real swarm across parallel agents
   configs/            config template for power mode
-web/                  the website (synthcheck.dev)
+web/                  the website (trysynthcheck.vercel.app)
 ```
 
 ## Wear the badge
 
 Shipped something you tested with SynthCheck? Add the badge — it's how SynthCheck spreads:
 
-[![Tested with SynthCheck](https://img.shields.io/badge/tested%20with-SynthCheck-ff5c38?style=flat-square)](https://synthcheck.dev)
+[![Tested with SynthCheck](https://img.shields.io/badge/tested%20with-SynthCheck-ff5c38?style=flat-square)](https://trysynthcheck.vercel.app)
 
 ```markdown
-[![Tested with SynthCheck](https://img.shields.io/badge/tested%20with-SynthCheck-ff5c38?style=flat-square)](https://synthcheck.dev)
+[![Tested with SynthCheck](https://img.shields.io/badge/tested%20with-SynthCheck-ff5c38?style=flat-square)](https://trysynthcheck.vercel.app)
 ```
 
 ## License
