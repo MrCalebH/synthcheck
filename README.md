@@ -20,7 +20,7 @@ Everyone building anything makes the same expensive bet: they pick a price, a na
 
 It doesn't have to be. The biggest CPG company in the world (Colgate-Palmolive), Stanford, and a $1B startup (Aaru) all proved the same thing in 2024–2025: **a properly-run simulated market predicts real customer behavior with remarkable accuracy** — 85–92% correlation with real survey panels. Aaru's synthetic voters called a primary within 371 votes.
 
-**SynthCheck** packages that exact method into one command. Tell it a decision; it builds a realistic, heterogeneous population of your customers, interviews them in their own words, and hands you the market's verdict — what'll sell, what won't, what to charge, and the objections you didn't see coming.
+**SynthCheck** packages that method into one command. Tell it a decision; it builds a realistic, heterogeneous population of your customers, interviews them in their own words, and hands you the market's verdict — what'll sell, what won't, what to charge, and the objections you didn't see coming.
 
 ## The whole idea, in 7 words
 
@@ -67,7 +67,7 @@ Three findings, three levers — all baked into the steps above:
 - **Grounding beats demographics by +15 points.** Stanford "Generative Agent Simulations of 1,000 People" (2024): agents built on rich real backstories replicated people's answers **85% as well as the people replicated themselves**. → *Step 2.*
 - **Scale + calibration.** Aaru (2025): a persistent swarm that updates against real outcomes predicted a primary within **371 votes**. → *the dual-track + validate-next.*
 
-**Honest framing:** SynthCheck is *directional*. It ranks options and surfaces real objections reliably; absolute conversion numbers flatter reality. Always smoke-test the winner with real money before betting big. It gets sharper the more real data you feed it.
+**Honest framing:** SynthCheck is *directional*. It ranks options and surfaces real objections reliably; absolute conversion numbers flatter reality. The 90/85% figures are the studies' *full* pipelines (real survey data plus an embedding/scoring step). A single paste of the prompt is a directional approximation of that method — great for ranking and objections; the `synthcheck.workflow.js` power-mode plus your own real data gets closest to those numbers. Always smoke-test the winner with real money before betting big.
 
 ## Use it on everything
 
