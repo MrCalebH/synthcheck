@@ -6,13 +6,19 @@
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#07080d" />
 <title>SynthCheck · Know if people will buy it before you build it</title>
-<meta name="description" content="SynthCheck makes 1,000 pretend customers who act like your real ones, then asks them about your price, offer, name, or words. Colgate ran this method and the answers matched real surveys 90% of the time. Free, works in any chat." />
+<meta name="description" content="SynthCheck makes 1,000 pretend customers who act like your real ones, then asks them about your price, offer, name, or words. It's the method Colgate used to match real surveys 90% of the time. Free, works in any chat." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="SynthCheck: know if people will buy it before you build it" />
-<meta property="og:description" content="1,000 pretend customers who act like your real ones answer your hardest question. Colgate ran this method and it matched real surveys 90% of the time. Free, any chat." />
+<meta property="og:description" content="1,000 pretend customers who act like your real ones answer your hardest question. The method Colgate used to match real surveys 90% of the time. Free, any chat." />
 <meta property="og:url" content="https://trysynthcheck.vercel.app" />
+<meta property="og:image" content="https://trysynthcheck.vercel.app/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SynthCheck: know if people will buy it before you build it" />
+<meta name="twitter:description" content="1,000 pretend customers answer your hardest question. The method Colgate used to match real surveys 90% of the time. Free, any chat." />
+<meta name="twitter:image" content="https://trysynthcheck.vercel.app/og.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -29,7 +35,6 @@
   h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-.02em;margin:0}
   .mono{font-family:var(--mono)}
   .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
-  /* hero */
   header{padding:90px 0 40px}
   .brand{font-family:var(--mono);font-weight:700;letter-spacing:.04em;font-size:15px;color:var(--ink)}
   .brand b{color:var(--acc)}
@@ -38,40 +43,40 @@
   .sub{font-size:clamp(17px,2.4vw,21px);color:#c4c9d8;max-width:660px;margin:22px 0 0}
   .statline{font-size:clamp(16px,2.2vw,19px);color:#d7dbe6;background:#0c1410;border:1px solid #1f3a2a;border-radius:12px;padding:15px 17px;margin:24px 0 0;max-width:660px;line-height:1.5}
   .statline .big{color:var(--acc);font-size:1.15em;white-space:nowrap}
-  .statline a{font-size:13.5px;color:var(--muted);border-bottom:1px dotted #355}
+  .statline a{font-size:13.5px;color:#7fd9bd;border-bottom:1px solid rgba(52,211,153,.4)}
   .idea{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(18px,2.6vw,24px);margin:26px 0 0}
   .idea .g{color:var(--acc)}
   .cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 0}
-  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:13px 20px;border-radius:11px;border:1px solid var(--line);cursor:pointer;transition:.15s}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:13px 20px;border-radius:11px;border:1px solid var(--line);cursor:pointer;transition:.15s;font-family:inherit}
   .btn.primary{background:var(--acc);color:#04130c;border-color:var(--acc)}
   .btn.primary:hover{filter:brightness(1.08);text-decoration:none}
   .btn.ghost{background:#0e1119;color:var(--ink)} .btn.ghost:hover{border-color:var(--acc);text-decoration:none}
+  .btn.run{background:#0e1119;color:var(--ink)} .btn.run:hover{border-color:var(--acc2);text-decoration:none}
   .anymodel{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:18px 0 0}
-  /* proof bar */
   .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:50px 0 0}
   .stat{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
   .stat .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:var(--acc)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:4px}
   .stat a{color:inherit;border-bottom:1px dotted #333}
-  /* sections */
   section{padding:60px 0;border-top:1px solid var(--line);margin-top:60px}
   section h2{font-size:clamp(26px,4vw,38px)}
   .lead{color:var(--muted);font-size:17px;margin:14px 0 0;max-width:660px}
-  /* prompt terminal */
-  .term{background:#05060a;border:1px solid var(--line);border-radius:14px;margin:26px 0 0;overflow:hidden}
-  .term .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:#0a0c13}
+  /* terminal + verdict */
+  .term,.verdict{background:#05060a;border:1px solid var(--line);border-radius:14px;margin:26px 0 0;overflow:hidden}
+  .term .bar,.verdict .vhead{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:#0a0c13}
   .dot{width:11px;height:11px;border-radius:50%} .r{background:#ff5f56}.y{background:#ffbd2e}.gr{background:#27c93f}
-  .term .bar .name{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .term .bar .name,.verdict .vhead .name{margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .verdict .vhead .ex{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:.12em;text-transform:uppercase}
   .term .bar .copy{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--acc);background:transparent;border:1px solid var(--line);padding:5px 11px;border-radius:8px;cursor:pointer}
   .term .bar .copy:hover{border-color:var(--acc)}
   pre.code{margin:0;padding:18px;overflow:auto;font-family:var(--mono);font-size:12.5px;line-height:1.7;color:#cdd3e0;max-height:340px;white-space:pre-wrap}
-  pre.code.full{max-height:none}
+  pre.vbody{margin:0;padding:18px;overflow-x:auto;font-family:var(--mono);font-size:13px;line-height:1.8;color:#cdd3e0;white-space:pre}
+  pre.vbody b{color:#fff} .vbody .bar2{color:var(--acc)} .vbody .win{color:var(--acc)} .vbody .no{color:var(--warn)} .vbody .q{color:var(--acc2)}
   .blank{color:var(--warn)}
   .twoways{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0 0}
   .card{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:20px}
   .card h3{font-size:18px} .card .tag{font-family:var(--mono);font-size:11px;color:var(--acc2);letter-spacing:.1em;text-transform:uppercase}
   .card pre{background:#05060a;border:1px solid var(--line);border-radius:9px;padding:12px;font-family:var(--mono);font-size:12px;color:#cdd3e0;overflow:auto;margin:12px 0 0}
-  /* steps */
   ol.steps{list-style:none;counter-reset:s;padding:0;margin:26px 0 0;display:grid;gap:12px}
   ol.steps li{counter-increment:s;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px 16px 56px;position:relative}
   ol.steps li::before{content:counter(s);position:absolute;left:16px;top:15px;width:26px;height:26px;border-radius:7px;background:#0e1119;border:1px solid var(--line);color:var(--acc);font-family:var(--mono);font-weight:700;font-size:13px;display:grid;place-items:center}
@@ -84,8 +89,10 @@
   .note{background:#120e08;border:1px solid #3a2c12;border-radius:12px;padding:16px 18px;margin:24px 0 0;color:#e7c9a0;font-size:14.5px}
   footer{border-top:1px solid var(--line);margin-top:64px;padding:40px 0 70px;color:var(--muted);font-size:14px}
   footer a{color:var(--muted);border-bottom:1px dotted #333}
-  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--acc);color:#04130c;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;font-family:var(--mono)}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--acc);color:#04130c;font-weight:600;font-size:14px;padding:11px 18px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;font-family:var(--mono);z-index:9}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .js .reveal.in{opacity:1;transform:none}
   @media(max-width:680px){.proof,.twoways{grid-template-columns:1fr}}
 </style>
 </head>
@@ -99,24 +106,47 @@
     <p class="statline"><b>This is not a guess.</b> It's the same method Colgate used to match real customer surveys <b class="big">90% of the time</b> in their 2025 study. Your run is a fast, directional version of it. <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">read the study</a></p>
     <p class="idea">So stop guessing. <span class="g">Just ask.</span></p>
     <div class="cta">
-      <button class="btn primary" onclick="copyPrompt()">⌘ Copy the prompt</button>
-      <a class="btn ghost" href="#how">See how it works</a>
+      <button class="btn primary" onclick="copyPrompt(this)">⌘ Copy the prompt</button>
+      <a class="btn ghost" href="#see">See it work →</a>
     </div>
     <p class="anymodel">// free · open source · works in ChatGPT, Claude, Gemini, anything</p>
 
     <div class="proof">
-      <div class="stat"><div class="n">90%</div><div class="l">How close the AI answers came to real surveys in Colgate's study. <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">Colgate, 2025</a></div></div>
-      <div class="stat"><div class="n">85%</div><div class="l">Almost as accurate as the real people, in Stanford's test. <a href="https://hai.stanford.edu/news/ai-agents-simulate-1052-individuals-personalities-impressive-accuracy" target="_blank" rel="noopener">Stanford, 2024</a></div></div>
-      <div class="stat"><div class="n">371</div><div class="l">Votes off when AI predicted a real election. <a href="https://www.research-live.com/article/news/accenture-invests-in-synthetic-audience-startup-aaru/id/5136643" target="_blank" rel="noopener">Aaru, 2025</a></div></div>
+      <div class="stat"><div class="n" data-to="90" data-suffix="%">90%</div><div class="l">How close the AI answers came to real surveys in Colgate's study. <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">Colgate, 2025</a></div></div>
+      <div class="stat"><div class="n" data-to="85" data-suffix="%">85%</div><div class="l">Almost as accurate as the real people, in Stanford's test. <a href="https://hai.stanford.edu/news/ai-agents-simulate-1052-individuals-personalities-impressive-accuracy" target="_blank" rel="noopener">Stanford, 2024</a></div></div>
+      <div class="stat"><div class="n" data-to="371">371</div><div class="l">Votes off when AI predicted a real election. <a href="https://www.research-live.com/article/news/accenture-invests-in-synthetic-audience-startup-aaru/id/5136643" target="_blank" rel="noopener">Aaru, 2025</a></div></div>
     </div>
   </header>
 
-  <section id="try">
+  <section id="see" class="reveal">
+    <span class="eyebrow">See it work</span>
+    <h2>Here's what you get back.</h2>
+    <p class="lead">Real example. Someone tested the price for a $29/mo focus app. Paste your own decision and you get a verdict like this in one reply.</p>
+    <div class="verdict">
+      <div class="vhead"><span class="dot r"></span><span class="dot y"></span><span class="dot gr"></span><span class="name">synthcheck.verdict</span><span class="ex">example · directional</span></div>
+<pre class="vbody"><span class="q">TEST:</span>      Should we charge $29/mo for FocusFlow, a focus-timer app?
+<span class="q">PASS LINE:</span> ship it if 35% or more would buy.
+
+<b>WHAT THE CROWD SAID</b>
+  $9/mo   <span class="bar2">████████████</span>  61% would buy
+  $19/mo  <span class="bar2">████████</span>      42% would buy   <span class="win">← makes the most money</span>
+  $29/mo  <span class="bar2">████</span>          19% would buy   <span class="no">✗ below the line</span>
+  $49/mo  <span class="bar2">█</span>              6% would buy
+
+<b>VERDICT:</b>  Kill $29. Ship <span class="win">$19</span>. It clears the bar and earns the most per visitor.
+<b>TOP NO:</b>   "There are free timers everywhere. Why would I pay every month?"
+<b>🔦 SURPRISE:</b> You guessed $29 would win on "premium feel." It didn't. Price-pickers
+           bounced, and big spenders didn't care about a timer.
+<b>TEST NEXT:</b> $19 vs. $19 with a 7-day free trial, on real traffic.</pre>
+    </div>
+  </section>
+
+  <section id="try" class="reveal">
     <span class="eyebrow">The gift · works in any chat</span>
     <h2>One prompt. Any chat. Real answers.</h2>
-    <p class="lead">Copy the box. Fill in the four <span class="blank">orange</span> blanks. Paste it into ChatGPT, Claude, or Gemini. You get back what your customers would think, what stops them from buying, and what they'd pay. All in one reply.</p>
+    <p class="lead">Copy the box. Fill in the four <span class="blank">orange</span> blanks. Paste it into ChatGPT, Claude, or Gemini. Or hit a button below and it opens with the prompt already loaded.</p>
     <div class="term">
-      <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot gr"></span><span class="name">synthcheck.prompt</span><button class="copy" onclick="copyPrompt()">copy ⧉</button></div>
+      <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot gr"></span><span class="name">synthcheck.prompt</span><button class="copy" onclick="copyPrompt(this)">copy ⧉</button></div>
       <pre class="code" id="promptbox">You are SYNTHCHECK, a synthetic market test. Build a realistic crowd of my customers,
 "interview" them, and give me the market's verdict BEFORE I build or spend.
 Use the method proven by Colgate-Palmolive, Stanford, and Aaru. Follow it exactly. The
@@ -129,6 +159,7 @@ WHAT I'M TESTING (paste the real offer / price points / copy / name / page):
 WHO MY CUSTOMERS ARE (or "infer them"): <e.g. solo founders, busy parents, chiropractors>
 WHAT I SECRETLY THINK WILL WIN: <your hunch. powers the Surprise check>
 ================
+If I left any blank empty, ask me for it before you start.
 
 Run these steps and SHOW each one:
 1) THE TEST. Restate my decision as a clear yes/no question with a pass line
@@ -148,12 +179,19 @@ Run these steps and SHOW each one:
    warn me if everyone clustered on one score (that means the crowd was too samey);
    for prices, give the money-making price; the top reasons people said no; 3 to 5 real
    quotes I can steal for ads; the one answer that SURPRISED you vs my hunch; and the 1 to 2
-   things worth a quick real test before I commit. Call it all DIRECTIONAL.</pre>
+   things worth a quick real test before I commit. Call it all DIRECTIONAL.
+
+Then offer to go deeper on any group, or re-run a variant for me.</pre>
+    </div>
+    <div class="cta" style="margin-top:16px">
+      <button class="btn primary" onclick="copyPrompt(this)">⌘ Copy the prompt</button>
+      <button class="btn run" onclick="runIn('https://chatgpt.com/?q=')">Run in ChatGPT ↗</button>
+      <button class="btn run" onclick="runIn('https://claude.ai/new?q=')">Run in Claude ↗</button>
     </div>
     <div class="note">🌐 <b>Want even better answers?</b> If your chat can search the web, add this line: <span class="mono">"Before you start, look up real reviews, reddit posts, and competitor sites for how these customers actually talk, and use their real words."</span> That one move is the biggest accuracy boost there is.</div>
   </section>
 
-  <section id="install">
+  <section id="install" class="reveal">
     <span class="eyebrow">Two ways to grab it</span>
     <h2>Paste it, or install it.</h2>
     <div class="twoways">
@@ -161,7 +199,7 @@ Run these steps and SHOW each one:
         <div class="tag">Way 1 · any chat</div>
         <h3>Paste the prompt</h3>
         <p class="lead" style="font-size:15px">Nothing to install. Copy the box above into ChatGPT, Claude, or Gemini. That's it.</p>
-        <button class="btn primary" style="margin-top:14px" onclick="copyPrompt()">Copy the prompt</button>
+        <button class="btn primary" style="margin-top:14px" onclick="copyPrompt(this)">Copy the prompt</button>
       </div>
       <div class="card">
         <div class="tag">Way 2 · agents & CLIs</div>
@@ -179,7 +217,7 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
     </div>
   </section>
 
-  <section id="how">
+  <section id="how" class="reveal">
     <span class="eyebrow">How it works</span>
     <h2>Six steps. This is what makes it accurate.</h2>
     <ol class="steps">
@@ -192,7 +230,7 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
     </ol>
   </section>
 
-  <section id="why">
+  <section id="why" class="reveal">
     <span class="eyebrow">Why it works</span>
     <h2>Why you can trust the answers.</h2>
     <p class="lead">Here's the deal. If you just ask ChatGPT "will people buy this?", it's too nice. It says yes to almost everything. SynthCheck does three things to get real answers. They're the same three things the studies proved.</p>
@@ -204,7 +242,7 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
     <div class="note" style="background:#0c1410;border-color:#1f3a2a;color:#a7e0c0">⚖️ <b>How accurate is this, really?</b> One paste gives you a strong, directional read. It's great for ranking your options and finding the objections you'd miss. The 90% is Colgate's full setup: real survey data plus a math scoring step. Your one paste is a lighter version of that. So use it to pick what to build and what to test. Then test the winner with real money.</div>
   </section>
 
-  <section id="use">
+  <section id="use" class="reveal">
     <span class="eyebrow">Use it on anything</span>
     <h2>Anything you're about to ship on a hunch.</h2>
     <div class="pills">
@@ -213,7 +251,8 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
       <span class="pill">Your pitch</span><span class="pill">A new feature</span><span class="pill">Ad copy</span>
     </div>
     <div class="cta" style="margin-top:34px">
-      <button class="btn primary" onclick="copyPrompt()">⌘ Copy the prompt</button>
+      <button class="btn primary" onclick="copyPrompt(this)">⌘ Copy the prompt</button>
+      <button class="btn run" onclick="runIn('https://chatgpt.com/?q=')">Run in ChatGPT ↗</button>
       <a class="btn ghost" href="https://github.com/MrCalebH/synthcheck" target="_blank" rel="noopener">★ Star on GitHub</a>
     </div>
   </section>
@@ -226,13 +265,28 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
 </div>
 <div class="toast" id="toast">copied. now paste it into any chat ✓</div>
 <script>
-  function copyPrompt(){
+  document.documentElement.className += ' js';
+  function showToast(){var el=document.getElementById('toast');el.classList.add('show');setTimeout(function(){el.classList.remove('show')},1900);}
+  function copyPrompt(btn){
     var t=document.getElementById('promptbox').textContent;
     navigator.clipboard.writeText(t).then(function(){
-      var el=document.getElementById('toast');el.classList.add('show');
-      setTimeout(function(){el.classList.remove('show')},1900);
+      showToast();
+      if(btn){var o=btn.getAttribute('data-label')||btn.textContent;btn.setAttribute('data-label',o);btn.textContent='Copied ✓';setTimeout(function(){btn.textContent=o},1900);}
     });
   }
+  function runIn(base){var t=document.getElementById('promptbox').textContent;window.open(base+encodeURIComponent(t),'_blank','noopener');}
+  function countUp(el){var to=+el.getAttribute('data-to'),suf=el.getAttribute('data-suffix')||'',start=null,dur=900;
+    function tick(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);el.textContent=Math.round(to*p)+suf;if(p<1)requestAnimationFrame(tick);}
+    requestAnimationFrame(tick);}
+  if('IntersectionObserver' in window){
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(s){ro.observe(s);});
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);co.unobserve(e.target);}})},{threshold:.6});
+    document.querySelectorAll('.n[data-to]').forEach(function(n){co.observe(n);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(s){s.classList.add('in');});
+  }
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

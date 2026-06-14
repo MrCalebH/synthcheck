@@ -17,6 +17,7 @@ WHAT I'M TESTING (paste the real offer / price points / copy / name / page):
 WHO MY CUSTOMERS ARE (or "infer them"): <e.g. solo founders, busy parents, chiropractors>
 WHAT I SECRETLY THINK WILL WIN: <your hunch. powers the Surprise check>
 ================
+If I left any blank empty, ask me for it before you start.
 
 Run these steps and SHOW each one:
 1) THE TEST. Restate my decision as a clear yes/no question with a pass line
@@ -37,6 +38,8 @@ Run these steps and SHOW each one:
    for prices, give the money-making price; the top reasons people said no; 3 to 5 real
    quotes I can steal for ads; the one answer that SURPRISED you vs my hunch; and the 1 to 2
    things worth a quick real test before I commit. Call it all DIRECTIONAL.
+
+Then offer to go deeper on any group, or re-run a variant for me.
 ```
 
 ---
