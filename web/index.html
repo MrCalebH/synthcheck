@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#07080d" />
-<title>SynthCheck · Test the market before you build it</title>
-<meta name="description" content="Simulate a thousand of your customers and ask them anything — your price, offer, name, or landing page — before you spend a dollar. The method Colgate, Stanford, and Aaru proved. Open source, any model." />
+<title>SynthCheck · Know if people will buy it before you build it</title>
+<meta name="description" content="SynthCheck makes 1,000 pretend customers who act like your real ones, then asks them about your price, offer, name, or words. Colgate ran this method and the answers matched real surveys 90% of the time. Free, works in any chat." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="SynthCheck — test the market before you build it" />
-<meta property="og:description" content="Simulate a thousand of your customers and ask them anything, before you spend a dollar. Open source. Any model." />
+<meta property="og:title" content="SynthCheck: know if people will buy it before you build it" />
+<meta property="og:description" content="1,000 pretend customers who act like your real ones answer your hardest question. Colgate ran this method and it matched real surveys 90% of the time. Free, any chat." />
 <meta property="og:url" content="https://trysynthcheck.vercel.app" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,17 +35,20 @@
   .brand b{color:var(--acc)}
   h1.title{font-size:clamp(40px,7vw,76px);margin:26px 0 0;font-weight:700}
   h1.title .g{background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{font-size:clamp(17px,2.4vw,21px);color:#c4c9d8;max-width:680px;margin:22px 0 0}
+  .sub{font-size:clamp(17px,2.4vw,21px);color:#c4c9d8;max-width:660px;margin:22px 0 0}
+  .statline{font-size:clamp(16px,2.2vw,19px);color:#d7dbe6;background:#0c1410;border:1px solid #1f3a2a;border-radius:12px;padding:15px 17px;margin:24px 0 0;max-width:660px;line-height:1.5}
+  .statline .big{color:var(--acc);font-size:1.15em;white-space:nowrap}
+  .statline a{font-size:13.5px;color:var(--muted);border-bottom:1px dotted #355}
   .idea{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(18px,2.6vw,24px);margin:26px 0 0}
   .idea .g{color:var(--acc)}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:34px 0 0}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 0}
   .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:13px 20px;border-radius:11px;border:1px solid var(--line);cursor:pointer;transition:.15s}
   .btn.primary{background:var(--acc);color:#04130c;border-color:var(--acc)}
   .btn.primary:hover{filter:brightness(1.08);text-decoration:none}
   .btn.ghost{background:#0e1119;color:var(--ink)} .btn.ghost:hover{border-color:var(--acc);text-decoration:none}
   .anymodel{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:18px 0 0}
   /* proof bar */
-  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:54px 0 0}
+  .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:50px 0 0}
   .stat{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
   .stat .n{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:var(--acc)}
   .stat .l{font-size:13px;color:var(--muted);margin-top:4px}
@@ -53,7 +56,7 @@
   /* sections */
   section{padding:60px 0;border-top:1px solid var(--line);margin-top:60px}
   section h2{font-size:clamp(26px,4vw,38px)}
-  .lead{color:var(--muted);font-size:17px;margin:14px 0 0;max-width:680px}
+  .lead{color:var(--muted);font-size:17px;margin:14px 0 0;max-width:660px}
   /* prompt terminal */
   .term{background:#05060a;border:1px solid var(--line);border-radius:14px;margin:26px 0 0;overflow:hidden}
   .term .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:#0a0c13}
@@ -91,125 +94,123 @@
 
   <header>
     <div class="brand">📈 SYNTH<b>CHECK</b></div>
-    <h1 class="title">Test the market <span class="g">before</span> you build it.</h1>
-    <p class="sub">Tell it a decision — a price, an offer, a name, a landing page — and SynthCheck simulates a thousand of your customers, interviews them, and hands you the market's verdict. In minutes, before you spend a dollar finding out the hard way.</p>
-    <p class="idea">Don't launch to find out. <span class="g">Find out, then launch.</span></p>
+    <h1 class="title">Know if people will <span class="g">buy it</span>. Before you build it.</h1>
+    <p class="sub">SynthCheck makes 1,000 pretend customers who act just like your real ones. Then it asks them what they think of your price, your offer, your name, or your words. You find out what works in minutes. For free.</p>
+    <p class="statline"><b>This is not a guess.</b> Colgate ran this exact method against real surveys. The pretend customers matched real people <b class="big">90% of the time.</b> <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">read the study</a></p>
+    <p class="idea">So stop guessing. <span class="g">Just ask.</span></p>
     <div class="cta">
       <button class="btn primary" onclick="copyPrompt()">⌘ Copy the prompt</button>
-      <a class="btn ghost" href="#install">Get the skill →</a>
+      <a class="btn ghost" href="#how">See how it works</a>
     </div>
-    <p class="anymodel">// free · open source · works with Claude, GPT, Gemini, any model</p>
+    <p class="anymodel">// free · open source · works in ChatGPT, Claude, Gemini, anything</p>
 
     <div class="proof">
-      <div class="stat"><div class="n">90–92%</div><div class="l">correlation with real survey panels — <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">Colgate × PyMC</a></div></div>
-      <div class="stat"><div class="n">85%</div><div class="l">as accurate as people answering for themselves — <a href="https://hai.stanford.edu/news/ai-agents-simulate-1052-individuals-personalities-impressive-accuracy" target="_blank" rel="noopener">Stanford</a></div></div>
-      <div class="stat"><div class="n">371</div><div class="l">votes — how close synthetic voters called a primary — <a href="https://www.research-live.com/article/news/accenture-invests-in-synthetic-audience-startup-aaru/id/5136643" target="_blank" rel="noopener">Aaru</a></div></div>
+      <div class="stat"><div class="n">90%</div><div class="l">How often the AI answers matched real customer surveys. <a href="https://arxiv.org/html/2510.08338v1" target="_blank" rel="noopener">Colgate, 2025</a></div></div>
+      <div class="stat"><div class="n">85%</div><div class="l">Almost as accurate as asking the real people. <a href="https://hai.stanford.edu/news/ai-agents-simulate-1052-individuals-personalities-impressive-accuracy" target="_blank" rel="noopener">Stanford, 2024</a></div></div>
+      <div class="stat"><div class="n">371</div><div class="l">Votes off when AI predicted a real election. <a href="https://www.research-live.com/article/news/accenture-invests-in-synthetic-audience-startup-aaru/id/5136643" target="_blank" rel="noopener">Aaru, 2025</a></div></div>
     </div>
   </header>
 
   <section id="try">
-    <span class="eyebrow">The gift · paste into any chat</span>
-    <h2>One prompt. Any model. A market verdict.</h2>
-    <p class="lead">Copy the box, fill the four <span class="blank">orange</span> blanks, send it to Claude / GPT / Gemini / anything. You get cohorts, simulated reactions, a scored verdict, the objections you missed, and the one surprise — in a single reply.</p>
+    <span class="eyebrow">The gift · works in any chat</span>
+    <h2>One prompt. Any chat. Real answers.</h2>
+    <p class="lead">Copy the box. Fill in the four <span class="blank">orange</span> blanks. Paste it into ChatGPT, Claude, or Gemini. You get back what your customers would think, what stops them from buying, and what they'd pay. All in one reply.</p>
     <div class="term">
       <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot gr"></span><span class="name">synthcheck.prompt</span><button class="copy" onclick="copyPrompt()">copy ⧉</button></div>
-      <pre class="code" id="promptbox">You are SYNTHCHECK — a synthetic market test. Simulate a realistic population of my
-customers, "interview" them, and give me the market's verdict BEFORE I build or spend.
-Use the method validated by Colgate-Palmolive × PyMC Labs, Stanford, and Aaru. Follow it
-exactly — the discipline is what makes it accurate instead of flattering.
+      <pre class="code" id="promptbox">You are SYNTHCHECK, a synthetic market test. Build a realistic crowd of my customers,
+"interview" them, and give me the market's verdict BEFORE I build or spend.
+Use the method proven by Colgate-Palmolive, Stanford, and Aaru. Follow it exactly. The
+discipline is what makes the answers accurate instead of just nice.
 
 ==== MY TEST ====
 DECISION TYPE: <pricing | offer | price-change | landing-page | copy | name | positioning>
 WHAT I'M TESTING (paste the real offer / price points / copy / name / page):
 <paste here>
 WHO MY CUSTOMERS ARE (or "infer them"): <e.g. solo founders, busy parents, chiropractors>
-WHAT I SECRETLY PREDICT WILL WIN: <your hunch — powers the Surprise Detector>
+WHAT I SECRETLY THINK WILL WIN: <your hunch. powers the Surprise check>
 ================
 
 Run these steps and SHOW each one:
-1) OUTCOME CONTRACT. Restate the decision as a falsifiable question with a ship/kill
-   threshold (e.g. "ship if top-2-box intent >= 40%"). State what would change the verdict.
-2) COHORTS. 4–6 commercial segments. REQUIRE one skeptic/red-team cohort (its job is to
-   refute) and one premium cohort (premium buyers often invert price findings — a tiering
-   signal). Name the REAL competitor products/prices each already pays. If you can browse,
-   pull real objections/desire/slang from reviews + reddit + competitors first; else infer.
-3) SIMULATE with forced heterogeneity (prevents the #1 failure: everything scoring the same).
-   Spread income ~5x, price sensitivity, skepticism, fatigue, ~20% financially stressed, and
-   the specific job each is hiring for. Pricing: each person sees ONE price only. Copy/names:
-   rotate variants between people.
-4) ELICIT IN WORDS, NOT NUMBERS (the key step). Each person reacts in natural language —
-   buy? what they'd pay? what stops them? what they love? NO ratings yet. Month-2 rule: they
-   convert only if they'd still defend the charge on their statement in month 2.
-5) SCORE BY SIMILARITY. Map each free-text reaction to 1–5 by which anchor it resembles —
-   judging only their words: 5 "take my money" · 4 "I'd probably try it" · 3 "depends" ·
-   2 "doesn't grab me" · 1 "hard pass". Report the DISTRIBUTION, not a mean. Top-2-box = 4+5.
-6) VERDICT vs the threshold: cut stated conversion ~50% for planning (keep rankings); FLAG
-   variance collapse if everyone clusters on one point; pricing → revenue-max price + curve;
-   top repeated objections + the red-team's killers; 3–5 verbatim quotes for ad copy;
-   🔦 SURPRISE: where did the market most disagree with my prediction?; VALIDATE NEXT: the
-   1–2 things worth a quick real-money test. Label it all DIRECTIONAL.</pre>
+1) THE TEST. Restate my decision as a clear yes/no question with a pass line
+   (e.g. "ship if 40%+ would buy"). Say what would change the answer.
+2) THE CROWD. 4 to 6 kinds of customer. Add one tough skeptic and one big spender
+   (big spenders often flip the price answer). Name the real products and prices each
+   one already pays for. If you can search the web, look up how they really talk first.
+3) MAKE THEM DIFFERENT. Spread out income, money worries, mood, and how much they care.
+   If everyone is the same, the answers are junk. For prices: each person sees ONE price.
+4) ASK IN PLAIN WORDS, NOT NUMBERS (the key step). Each person reacts like a real human.
+   Would they buy? What would they pay? What stops them? No star ratings yet. The keep-it
+   test: they only count as a buyer if they'd still be glad they paid a month later.
+5) THEN SCORE IT. Turn each answer into a 1 to 5 by what they actually said:
+   5 "take my money" · 4 "I'd probably try it" · 3 "depends" · 2 "meh" · 1 "no way".
+   Show the spread, not the average.
+6) THE VERDICT vs the pass line: cut the buy rate ~50% for planning (keep the ranking);
+   warn me if everyone clustered on one score (that means the crowd was too samey);
+   for prices, give the money-making price; the top reasons people said no; 3 to 5 real
+   quotes I can steal for ads; the one answer that SURPRISED you vs my hunch; and the 1 to 2
+   things worth a quick real test before I commit. Call it all DIRECTIONAL.</pre>
     </div>
-    <div class="note">🌐 <b>Want uncanny accuracy?</b> If your model can browse, add: <span class="mono">"Before simulating, search reviews, reddit, and competitor sites for how these customers really talk, and use their actual words."</span> Grounding in real language is the single biggest lever — it's what took Stanford's agents to 85%.</div>
+    <div class="note">🌐 <b>Want even better answers?</b> If your chat can search the web, add this line: <span class="mono">"Before you start, look up real reviews, reddit posts, and competitor sites for how these customers actually talk, and use their real words."</span> That one move is the biggest accuracy boost there is.</div>
   </section>
 
   <section id="install">
-    <span class="eyebrow">Two ways in</span>
+    <span class="eyebrow">Two ways to grab it</span>
     <h2>Paste it, or install it.</h2>
     <div class="twoways">
       <div class="card">
-        <div class="tag">Option A · any model</div>
+        <div class="tag">Way 1 · any chat</div>
         <h3>Paste the prompt</h3>
-        <p class="lead" style="font-size:15px">Nothing to install. Drop the box above into Claude, GPT, Gemini, or any chat. Done.</p>
+        <p class="lead" style="font-size:15px">Nothing to install. Copy the box above into ChatGPT, Claude, or Gemini. That's it.</p>
         <button class="btn primary" style="margin-top:14px" onclick="copyPrompt()">Copy the prompt</button>
       </div>
       <div class="card">
-        <div class="tag">Option B · agents & CLIs</div>
+        <div class="tag">Way 2 · agents & CLIs</div>
         <h3>Install the skill</h3>
-        <p class="lead" style="font-size:15px">For Claude Code, Codex, Gemini CLI & friends. Then just say <span class="mono">/synthcheck</span>.</p>
+        <p class="lead" style="font-size:15px">Using Claude Code, Codex, or a CLI? Drop in the skill, then type <span class="mono">/synthcheck</span>.</p>
         <pre>git clone https://github.com/MrCalebH/synthcheck.git
-# copy synthcheck/ into your agent's skills dir</pre>
+# copy synthcheck/ into your agent's skills folder</pre>
       </div>
     </div>
     <div class="card" style="margin-top:18px">
-      <div class="tag">Already have an agent?</div>
-      <h3>Point it at the URL</h3>
-      <pre>Follow this and run a synthcheck test on my idea:
+      <div class="tag">Already have an AI agent?</div>
+      <h3>Just point it at this</h3>
+      <pre>Follow this and run a synthcheck on my idea:
 https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
     </div>
   </section>
 
-  <section id="method">
-    <span class="eyebrow">The method</span>
-    <h2>Six steps. The discipline is the accuracy.</h2>
+  <section id="how">
+    <span class="eyebrow">How it works</span>
+    <h2>Six steps. This is what makes it accurate.</h2>
     <ol class="steps">
-      <li><b>Outcome Contract.</b> Turn the decision into a falsifiable question with a ship/kill threshold — and write down your own prediction.</li>
-      <li><b>Cohorts.</b> 4–6 real segments, including a skeptic red-team and a premium cohort, grounded in real reviews/reddit language and the prices they already pay.</li>
-      <li><b>Simulate.</b> Build the population with forced heterogeneity. One price per person — never let anyone compare all the prices.</li>
-      <li><b>Elicit in words.</b> Every person reacts in natural language, never a number. The month-2 rule: would they <i>keep</i> it, not just buy it.</li>
-      <li><b>Score by similarity (SSR).</b> Map each reaction to the 1–5 scale by which anchor it resembles. Report the distribution, not a mean.</li>
-      <li><b>Verdict.</b> Ship/kill, optimism haircut, objection map, verbatim gold, the 🔦 surprise, and what to validate with real money next.</li>
+      <li><b>Pick your test.</b> Say what you're deciding (a price, a name, an offer) and what "yes, it works" looks like. Write down your own guess.</li>
+      <li><b>Build the crowd.</b> Make 4 to 6 kinds of customer. Add one tough skeptic and one big spender. Use the real prices they already pay.</li>
+      <li><b>Make them different.</b> Give them different incomes, moods, and money worries. If they're all the same, the answers are junk.</li>
+      <li><b>Ask in plain words.</b> Each one says what they really think. Would they buy? What would they pay? What stops them? No star ratings yet.</li>
+      <li><b>Then score it.</b> Turn each answer into a 1 to 5 by what they actually said. This one trick is the whole reason it's accurate.</li>
+      <li><b>Get the verdict.</b> Build it or kill it. The top reasons people say no. The best lines to steal for ads. And the one answer that surprises you.</li>
     </ol>
   </section>
 
   <section id="why">
-    <span class="eyebrow">Why it's not just ChatGPT-in-a-box</span>
-    <h2>Naive synthetic research lies politely.</h2>
-    <p class="lead">Ask a model to "rate this 1–5" and everything comes back a 4. SynthCheck's three rules are exactly the three findings the research proved — that's the gap between a flattering guess and a verdict you can bet on.</p>
+    <span class="eyebrow">Why it works</span>
+    <h2>Why you can trust the answers.</h2>
+    <p class="lead">Here's the deal. If you just ask ChatGPT "will people buy this?", it's too nice. It says yes to almost everything. SynthCheck does three things to get real answers. They're the same three things the studies proved.</p>
     <div class="why">
-      <div class="row"><b>Words, then numbers.</b> Mapping free-text reactions to the scale by similarity (SSR) hit 90–92% correlation with real panels — direct rating asks produce garbage distributions. <span class="src">Colgate-Palmolive × PyMC Labs, 2025</span></div>
-      <div class="row"><b>Grounding beats demographics by +15 points.</b> Agents built on real backstories replicated people 85% as well as the people replicated themselves. Real customer language is the lever. <span class="src">Stanford, "1,000 People," 2024</span></div>
-      <div class="row"><b>Scale + calibration.</b> A swarm that updates against real outcomes called a primary within 371 votes. SynthCheck stays dual-track: simulate to decide what to test, then test for real. <span class="src">Aaru, 2025</span></div>
+      <div class="row"><b>Let them talk first, then score.</b> When the AI answers in words and you score it after, it matches real surveys 90% of the time. Asking for a 1-to-5 straight up gives junk. <span class="src">Colgate-Palmolive, 2025</span></div>
+      <div class="row"><b>Make the customers real.</b> AI that knows real backstories was almost as accurate as the real people. Way better than guessing by age and gender. <span class="src">Stanford, "1,000 People," 2024</span></div>
+      <div class="row"><b>Check it against the real world.</b> One team used this to call a real election and missed by only 371 votes. <span class="src">Aaru, 2025</span></div>
     </div>
-    <div class="note" style="background:#0c1410;border-color:#1f3a2a;color:#a7e0c0">⚖️ <b>Honest by design.</b> SynthCheck is <b>directional</b> — it ranks options and surfaces real objections reliably; absolute numbers flatter reality. It tells you what to build and what to test. It doesn't replace the real-money test — it stops you betting blind before you run one.</div>
+    <div class="note" style="background:#0c1410;border-color:#1f3a2a;color:#a7e0c0">⚖️ <b>Straight talk.</b> This gives you a strong read, not a crystal ball. It points you at the right move and shows the objections you'd miss. Then go test the winner with real money before you bet big.</div>
   </section>
 
   <section id="use">
-    <span class="eyebrow">Use it on everything</span>
-    <h2>Anywhere you're about to ship on a hunch.</h2>
+    <span class="eyebrow">Use it on anything</span>
+    <h2>Anything you're about to ship on a hunch.</h2>
     <div class="pills">
-      <span class="pill">Pricing</span><span class="pill">Offers</span><span class="pill">Price changes</span>
-      <span class="pill">Landing pages</span><span class="pill">Headlines &amp; copy</span><span class="pill">Product names</span>
-      <span class="pill">Positioning</span><span class="pill">Feature bets</span><span class="pill">Pitch lines</span>
+      <span class="pill">Prices</span><span class="pill">Offers</span><span class="pill">Price changes</span>
+      <span class="pill">Landing pages</span><span class="pill">Headlines</span><span class="pill">Product names</span>
+      <span class="pill">Your pitch</span><span class="pill">A new feature</span><span class="pill">Ad copy</span>
     </div>
     <div class="cta" style="margin-top:34px">
       <button class="btn primary" onclick="copyPrompt()">⌘ Copy the prompt</button>
@@ -218,12 +219,12 @@ https://raw.githubusercontent.com/MrCalebH/synthcheck/main/prompt.md</pre>
   </section>
 
   <footer>
-    <div>SynthCheck — <span class="mono">test the market before you build it.</span></div>
-    <div style="margin-top:8px">MIT licensed · <a href="https://github.com/MrCalebH/synthcheck" target="_blank" rel="noopener">GitHub</a> · built on research from Colgate-Palmolive, Stanford, and Aaru.</div>
+    <div>SynthCheck. <span class="mono">Know if it'll work before you build it.</span></div>
+    <div style="margin-top:8px">Free and open source (MIT) · <a href="https://github.com/MrCalebH/synthcheck" target="_blank" rel="noopener">GitHub</a> · built on research from Colgate-Palmolive, Stanford, and Aaru.</div>
   </footer>
 
 </div>
-<div class="toast" id="toast">copied — paste into any chat ✓</div>
+<div class="toast" id="toast">copied. now paste it into any chat ✓</div>
 <script>
   function copyPrompt(){
     var t=document.getElementById('promptbox').textContent;
